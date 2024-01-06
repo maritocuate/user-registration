@@ -32,7 +32,7 @@ export default function Register() {
 
   return (
     <form
-      className="grid w-80 gap-y-2"
+      className="grid w-80 gap-y-2 my-5"
       onSubmit={handleSubmit(data => console.log(data))}
     >
       <label>Name</label>
