@@ -1,9 +1,13 @@
 'use client'
 
+import { useRef } from 'react'
 import { userSchema, mappedGenres } from '@/schema/userSchema'
 import { Input, Submit, Error, Select } from '../styles'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
+
+import { useAppDispatch } from '../redux/hooks'
+import { addUser } from '../redux/features/usersSlice'
 
 type Inputs = {
   name: string
@@ -16,6 +20,9 @@ type Inputs = {
 }
 
 export default function Register() {
+  const formRef = useRef<HTMLFormElement | null>(null)
+  const dispatch = useAppDispatch()
+
   // Configures the hook useForm with the expected data type (Inputs)
   const {
     register,
@@ -32,10 +39,16 @@ export default function Register() {
     </option>
   ))
 
+  const saveData = (data: Inputs) => {
+    dispatch(addUser(data))
+    if (formRef.current) formRef.current?.reset()
+  }
+
   return (
     <form
       className="grid w-80 gap-y-2 my-5"
-      onSubmit={handleSubmit(data => console.log(data))}
+      onSubmit={handleSubmit(data => saveData(data))}
+      ref={formRef}
     >
       {/* Name */}
       <label>Name</label>
