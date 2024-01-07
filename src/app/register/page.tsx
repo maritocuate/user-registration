@@ -1,6 +1,7 @@
 'use client'
 
 import { useRef } from 'react'
+import { useRouter } from 'next/navigation'
 import { userSchema, mappedGenres } from '@/schema/userSchema'
 import { Input, Submit, Error, Select } from '../styles'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -20,6 +21,8 @@ type Inputs = {
 }
 
 export default function Register() {
+  const router = useRouter()
+
   const formRef = useRef<HTMLFormElement | null>(null)
   const dispatch = useAppDispatch()
 
@@ -42,6 +45,7 @@ export default function Register() {
   const saveData = (data: Inputs) => {
     dispatch(addUser(data))
     if (formRef.current) formRef.current?.reset()
+    router.push('/')
   }
 
   return (
