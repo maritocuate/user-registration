@@ -14,7 +14,6 @@ type Inputs = {
   name: string
   email: string
   genre: string
-  dayOfBirth: string
   dateOfBirth: string
   password: string
   confirmPassword: string
