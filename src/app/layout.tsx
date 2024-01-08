@@ -23,7 +23,7 @@ export default function RootLayout({
         <footer className="absolute bottom-0 w-full text-sm text-gray-100">
           <a
             className="mx-4 hover:text-yellow-300"
-            href="https://github.com/vercel/next.js/tree/canary/examples/with-redux"
+            href="https://github.com/maritocuate/user-registration"
           >
             github
           </a>
