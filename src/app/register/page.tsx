@@ -2,6 +2,7 @@
 
 import { useRef } from 'react'
 import { useRouter } from 'next/navigation'
+import { Inputs } from '@/types'
 import { userSchema, mappedGenres } from '@/schema/userSchema'
 import { Input, Submit, Error, Select } from '../styles'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -9,15 +10,6 @@ import { useForm } from 'react-hook-form'
 
 import { useAppDispatch } from '../redux/hooks'
 import { addUser } from '../redux/features/usersSlice'
-
-type Inputs = {
-  name: string
-  email: string
-  genre: string
-  dateOfBirth: string
-  password: string
-  confirmPassword: string
-}
 
 export default function Register() {
   const router = useRouter()

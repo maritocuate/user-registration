@@ -1,10 +1,11 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { Inputs } from '@/types'
+import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 
 export const usersSlice = createSlice({
   name: 'users',
-  initialState: [],
+  initialState: [] as Inputs[],
   reducers: {
-    addUser: (state, action) => {
+    addUser: (state, action: PayloadAction<Inputs>) => {
       state.push(action.payload)
     },
   },

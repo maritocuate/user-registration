@@ -20,6 +20,21 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Providers>{children}</Providers>
+        <footer className="absolute bottom-0 w-full text-sm text-gray-100">
+          <a
+            className="mx-4 hover:text-yellow-300"
+            href="https://github.com/vercel/next.js/tree/canary/examples/with-redux"
+          >
+            github
+          </a>
+
+          <a
+            className="hover:text-yellow-300"
+            href="https://mq-delta.vercel.app/"
+          >
+            marioq
+          </a>
+        </footer>
       </body>
     </html>
   )

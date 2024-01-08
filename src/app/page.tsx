@@ -1,12 +1,13 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
+import { Inputs } from '@/types'
 import { Submit } from './styles'
 import { useAppSelector } from './redux/hooks'
 
 export default function Register() {
   const router = useRouter()
-  const users = useAppSelector(state => state.usersReducer)
+  const users: Inputs[] | [] = useAppSelector(state => state.usersReducer)
 
   return (
     <div className="grid w-80 gap-y-2 my-5">
