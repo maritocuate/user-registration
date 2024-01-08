@@ -1,6 +1,8 @@
 # User Registration
 
-This NextJS project allows users to register on the site. The application uses Redux Toolkit as store, TailwindCSS, and Typescript.
+This NextJS project allows users to register on the site using a form validated with Zod. The application uses Redux Toolkit as store, TailwindCSS, and Typescript.
+
+![alt text](https://github.com/maritocuate/user-registration/blob/main/public/sshot.png)
 
 ## Getting Started
 
